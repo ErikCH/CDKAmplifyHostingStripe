@@ -53,6 +53,7 @@ export class CdkStripeStack extends cdk.Stack {
     });
 
     secretStripeKey.grantRead(stripePurchaseLambda);
+    secretEndPoint.grantRead(stripeWebhookLambda);
 
     props.stripePurchasesTable.grantReadWriteData(stripeWebhookLambda);
 
