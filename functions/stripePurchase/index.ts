@@ -14,7 +14,7 @@ export async function handler(
 ): Promise<APIGatewayProxyResult> {
   try {
     const secretsManager = new SecretsManager();
-    const secretName = process.env.STRIPE_SECREET_KEY_NAME; // Pass the secret name as an environment variable
+    const secretName = process.env.STRIPE_SECREET_KEY_NAME;
 
     const secretValue = await secretsManager.getSecretValue({
       SecretId: secretName!
