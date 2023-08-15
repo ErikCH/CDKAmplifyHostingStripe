@@ -79,17 +79,6 @@ export class CdkStripeStack extends cdk.Stack {
     const stripeWebhookResource =
       apiStripeGateway.root.addResource("stripeWebhooks");
 
-    // stripePurchaseResource.addCorsPreflight({
-    //   allowOrigins: apigateway.Cors.ALL_ORIGINS,
-    //   allowMethods: apigateway.Cors.ALL_METHODS,
-    //   allowHeaders: ["*"] // Specify allowed headers
-    // });
-
-    // stripeWebhookResource.addCorsPreflight({
-    //   allowOrigins: apigateway.Cors.ALL_ORIGINS,
-    //   allowMethods: apigateway.Cors.ALL_METHODS,
-    //   allowHeaders: ["*"] // Specify allowed headers
-    // });
     const stripePurchaseIntegration = new apigateway.LambdaIntegration(
       stripePurchaseLambda
     );
